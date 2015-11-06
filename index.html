@@ -15,9 +15,12 @@
           </div>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
-              <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
+              <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" ng-submit="getArtist()">
+              <button class="btn btn-primary" ng-click="getArtist()"> Submit </button>
             </div>
+            <select class="input-medium" ng-model="limit" ng-options="value.label for value in options track by value.value" >
+              <option style="display:none" value="">select a filter</option>
+            </select>
           </form>
         </div>
       </div>
@@ -30,6 +33,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/itunesService.js"></script>
   </body>
